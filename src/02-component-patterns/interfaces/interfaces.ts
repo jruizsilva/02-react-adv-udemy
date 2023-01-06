@@ -7,6 +7,8 @@ export interface ProductContextProps {
   counter: number
   product: Product
   increaseBy: (value: number) => void
+  maxCount?: number
+  isMaxCountReached: boolean
 }
 
 export interface Product {
@@ -16,7 +18,11 @@ export interface Product {
 }
 
 export interface ProductCardHOCProps {
-  ({ product, children, className }: ProductCardProps): JSX.Element
+  ({
+    product,
+    children,
+    className
+  }: ProductCardProps): JSX.Element
   Buttons: (Props: ProductButtonsProps) => JSX.Element
   Image: (Props: ProductImageProps) => JSX.Element
   Title: (Props: ProductTitleProps) => JSX.Element
@@ -29,4 +35,18 @@ export interface onChangeArgs {
 
 export interface ProductInCart extends Product {
   count: number
+}
+
+export interface InitialValue {
+  count?: number
+  maxCount?: number
+}
+
+export interface ChildrenInterface {
+  count: number
+  product: Product
+  maxCount?: number
+  isMaxCountReached: boolean
+  reset: () => void
+  increaseBy: (value: number) => void
 }
