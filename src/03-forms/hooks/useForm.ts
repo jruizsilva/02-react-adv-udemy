@@ -22,8 +22,6 @@ export const useForm = <T>(initState: T) => {
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-
-    console.log(formData)
   }
 
   return { ...formData, onChange, onSubmit, isValidEmail, resetForm }

@@ -12,7 +12,6 @@ interface Props {
 export const MyTextInput = ({ label, ...props }: Props) => {
   const [field] = useField(props)
 
-  console.log(field)
   return (
     <>
       <label htmlFor={props.id || props.name}>{label}</label>
